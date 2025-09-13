@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Arial Narrow';
+    src: url('./arial-narrow-regular.eot');
+    src: url('./arial-narrow-regular.eot?#iefix') format('embedded-opentype'),
+         url('./arial-narrow-regular.woff') format('woff'),
+         url('./arial-narrow-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arial Narrow';
+    src: url('./arial-narrow-italic.eot');
+    src: url('./arial-narrow-italic.eot?#iefix') format('embedded-opentype'),
+         url('./arial-narrow-italic.woff') format('woff'),
+         url('./arial-narrow-italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arial Narrow';
+    src: url('./arial-narrow-bold.eot');
+    src: url('./arial-narrow-bold.eot?#iefix') format('embedded-opentype'),
+         url('./arial-narrow-bold.woff') format('woff'),
+         url('./arial-narrow-bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arial Narrow';
+    src: url('./arial-narrow-bolditalic.eot');
+    src: url('./arial-narrow-bolditalic.eot?#iefix') format('embedded-opentype'),
+         url('./arial-narrow-bolditalic.woff') format('woff'),
+         url('./arial-narrow-bolditalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
