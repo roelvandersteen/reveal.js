@@ -1,0 +1,127 @@
+/**
+ * Garmin dark theme for Reveal.js
+ */
+
+// Default mixins and settings -----------------
+@use "sass:color";
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(./fonts/arial-narrow/arial-narrow.css);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #0c0c0c;
+
+$mainColor: #e0e0e0;
+$blockMargin: 20px 0;
+$headingColor: #808080;
+
+$mainFontSize: 34px;
+$mainFont: 'Arial Narrow', Helvetica-Narrow, Arial, Helvetica, sans-serif;
+$headingFont: 'Arial Narrow', Helvetica-Narrow, Arial, Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontWeight: 600;
+$linkColor: #42affa;
+$linkColorHover: color.scale( $linkColor, $lightness: 15% );
+$selectionBackgroundColor: rgba( $linkColor, 0.75 );
+
+$heading1Size: 1.8em;
+$heading2Size: 1.4em;
+$heading3Size: 1.2em;
+$heading4Size: 1em;
+
+// Change text colors against light slide backgrounds
+@include light-bg-text-color(#222);
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+// Slide background
+.reveal:before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url("assets/garmin-slide-bg.svg") right bottom / cover no-repeat;
+  pointer-events: none;
+  z-index: -1;
+}
+
+// Title and Outro slide specific styling
+.title .reveal:before,
+.outro .reveal:before {
+  background: none;
+}
+
+.title .reveal .slides::before,
+.outro .reveal .slides::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url("assets/garmin-logo-white.svg") center 120px / 180px auto no-repeat;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.outro .reveal .slides::before {
+  background-size: 400px auto;
+  background-position: center center;
+}
+
+.title .reveal .slides {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+  line-height: 1.4;
+  font-weight: inherit;
+  padding-top: 40px;
+  text-align: left;
+}
+
+.title .reveal .slides section,
+.title .reveal .slides section > section {
+  text-align: center;
+}
+
+// h1 specific styling
+.reveal h1 {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+// h2 on title slide
+.title .reveal h2 {
+  font-style: italic;
+}
+
+// Various element styling
+.reveal blockquote {
+  padding: 0 20px 20px;
+}
+
+.reveal b,
+.reveal strong,
+.reveal th {
+  color: $headingColor;
+}
+
+.reveal code {
+  color: color.scale( $linkColor, $lightness: 40% );
+  font-size: 0.9em;
+}
+
+.reveal pre code {
+  color: $mainColor;
+}
